@@ -7,7 +7,7 @@ char server[] = "http://dgerena.github.io";
 IPAddress ip(192,168,0,177);
 EthernetClient client;
 String reportString;
-int led = 13;
+int led = 9;
 
 void setup() {
  // Open serial communications and wait for port to open:
@@ -69,7 +69,7 @@ void loop()
         digitalWrite(led,HIGH);
         Serial.println(w);
       }else{
-       digitalWrite(led,HIGH);
+       digitalWrite(led,LO);
        Serial.println("You have failed to light the bulb.");
       }
     }
