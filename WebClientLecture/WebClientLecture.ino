@@ -69,7 +69,7 @@ void loop()
         digitalWrite(led,HIGH);
         Serial.println(w);
       }else{
-       digitalWrite(led,LO);
+       digitalWrite(led,LOW);
        Serial.println("You have failed to light the bulb.");
       }
     }
