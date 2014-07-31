@@ -150,4 +150,4 @@ $(document).ready(function(){
 /////////////////////////
 	
 	//http://dgerena.github.io/advancedTopicsInWeb/capstone/index.html github link.
-});
+
