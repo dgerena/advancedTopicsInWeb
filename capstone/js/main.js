@@ -109,7 +109,7 @@ function draw(){
 	};
 
 	function redraw(theValue){
-		console.log($("#test").val());
+		console.log(theValue);
 		if (theValue == '1.00'){
 			ctx.beginPath(); 
 			ctx.lineWidth="5";
