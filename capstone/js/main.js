@@ -110,7 +110,7 @@ function draw(){
 
 	function redraw(theValue){
 		console.log(theValue);
-		if (theValue == '1.00'){
+		if (theValue == 1.00){
 			ctx.beginPath(); 
 			ctx.lineWidth="5";
 			ctx.strokeStyle="green";
