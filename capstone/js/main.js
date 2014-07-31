@@ -105,7 +105,7 @@ $(document).ready(function(){
 
 		// arrow
 		
-		if (document.getElementById("test").value==1.00) {
+		if (document.getElementById("test").value=='1.00') {
 			ctx.beginPath(); 
 			ctx.lineWidth="5";
 			ctx.strokeStyle="green";
