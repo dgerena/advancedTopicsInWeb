@@ -142,7 +142,7 @@ $(document).ready(function(){
 			//if statement for the direction in the header.
 			
 		}
-	};
+	}
 	} else {
 	  // canvas-unsupported code here
 	}
