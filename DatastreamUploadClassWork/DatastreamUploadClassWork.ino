@@ -10,7 +10,7 @@ char xivelyKey[] = "RtvEv4aIc9qiDgjCOF5GuN1x75nJkkkrnr9eeEwoUGYRkZlh";
 // Analog pin which we're monitoring (0 and 1 are used by the Ethernet shield)
 int sensorPin = 3;
 int pirState=HIGH;
-int inputPin=3;
+int inputPin=A0;
 int val=0;
 // Define the strings for our datastream IDs
 char sensorId[] = "sensor_reading1";
@@ -35,8 +35,9 @@ void setup() {
   }
 }
 void loop() {
-  if(digitalRead(inputPin) == HIGH){
-    val=1;
+  Serial.print(analogRead(inputPin));
+  if(analogRead(inputPin) <520){
+    val=0;
     Serial.print("sensor reads ");
     Serial.println(val);
     int sensorValue = val;
@@ -49,7 +50,7 @@ void loop() {
     Serial.println(ret);
     Serial.println();
   }else{
-    val=0;
+    val=1;
     Serial.print("sensor reads ");
     Serial.println(val);
     int sensorValue = val;

@@ -32,7 +32,7 @@ $(document).ready(function(){
 	// WARNING: Code here will continue executing while we get the datastream data from Xively,   
 	// use the function associated with datastream.get to work with the data   
 	// once the request is complete
-	var callback= $.Callbacks();
+	var callbacks= $.Callbacks();
 	callbacks.add(draw());
 });
 function draw(){
