@@ -1,3 +1,4 @@
+var ctx;
 $(document).ready(function(){
 	// xively shit starts here.
 	xively.setKey( "7mwhzeLKvubmGwT49aJH7Aztn6tbGETGnHraIcrooYP2qkVc" );
@@ -42,7 +43,7 @@ $(document).ready(function(){
 function draw(){
 		var canvas = document.getElementById('myCanvas');	
 		if(canvas.getContext){
-			var ctx = canvas.getContext('2d');
+			ctx = canvas.getContext('2d');
 			// drawing code here
 			ctx.beginPath(); 
 			ctx.lineWidth="5";
