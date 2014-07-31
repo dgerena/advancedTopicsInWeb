@@ -101,4 +101,5 @@ $(document).ready(function(){
 	} else {
 	  // canvas-unsupported code here
 	}
+	//http://dgerena.github.io/advancedTopicsInWeb/capstone/index.html github link.
 });
