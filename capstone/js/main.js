@@ -14,27 +14,30 @@ $(document).ready(function(){
 	xively.datastream.get (feedID, datastreamID, function ( datastream ) {  
 		// WARNING: This code is only executed when we get a response back from Xively,   
 		// it will likely execute after the rest your script  
-		//  
 		// NOTE: The variable "datastream" will contain all the Datastream information   
 		// as an object. The structure of Datastream objects can be found at:   
 		// https://xively.com/dev/docs/api/quick_reference/api_resource_attributes/#datastream  
 
 		// Display the current value from the datastream  
+		// This function runs the first time we get data from xively.  
+		// Below, we subscribe for updates.
 		$(selector).html( datastream["current_value"] );  
+		draw();
+		redraw();
 		// Getting realtime!   
 		// The function associated with the subscribe method will be executed   
 		// every time there is an update to the datastream  
 		xively.datastream.subscribe( feedID, datastreamID, function ( event , datastream_updated ) {  
+			// This function runs any time updated data is received from xively.
 		  // Display the current value from the updated datastream  
 		  $(selector).html( datastream_updated["current_value"] );  
+		  redraw();
 		});  
 	});
 	// WARNING: Code here will continue executing while we get the datastream data from Xively,   
 	// use the function associated with datastream.get to work with the data   
 	// once the request is complete
-	var callbacks= $.Callbacks();
-	callbacks.add(draw());
-	callbacks.fire();
+	
 });
 function draw(){
 		var canvas = document.getElementById('myCanvas');	
@@ -98,38 +101,40 @@ function draw(){
 			ctx.stroke();
 
 			// arrow
-			$(function(){
-				console.log($("#test").val());
-				if (document.getElementById("test").text=='1.00'){
-					ctx.beginPath(); 
-					ctx.lineWidth="5";
-					ctx.strokeStyle="green";
-					ctx.moveTo(150,400);
-					ctx.lineTo(150,200);
-					ctx.stroke();	
-					ctx.beginPath(); 
-					ctx.lineWidth="5";
-					ctx.strokeStyle="red";
-					ctx.moveTo(200,400);
-					ctx.lineTo(380,310);
-					ctx.stroke();	
-				}else{
-					ctx.beginPath(); 
-					ctx.lineWidth="5";
-					ctx.strokeStyle="red";
-					ctx.moveTo(150,400);
-					ctx.lineTo(150,200);
-					ctx.stroke();	
-					ctx.beginPath(); 
-					ctx.lineWidth="5";
-					ctx.strokeStyle="green";
-					ctx.moveTo(200,400);
-					ctx.lineTo(380,310);
-					ctx.stroke();	
-				}
-			});
+			
 		};
 	};
+
+	function redraw(){
+		console.log($("#test").val());
+		if (document.getElementById("test").text=='1.00'){
+			ctx.beginPath(); 
+			ctx.lineWidth="5";
+			ctx.strokeStyle="green";
+			ctx.moveTo(150,400);
+			ctx.lineTo(150,200);
+			ctx.stroke();	
+			ctx.beginPath(); 
+			ctx.lineWidth="5";
+			ctx.strokeStyle="red";
+			ctx.moveTo(200,400);
+			ctx.lineTo(380,310);
+			ctx.stroke();	
+		}else{
+			ctx.beginPath(); 
+			ctx.lineWidth="5";
+			ctx.strokeStyle="red";
+			ctx.moveTo(150,400);
+			ctx.lineTo(150,200);
+			ctx.stroke();	
+			ctx.beginPath(); 
+			ctx.lineWidth="5";
+			ctx.strokeStyle="green";
+			ctx.moveTo(200,400);
+			ctx.lineTo(380,310);
+			ctx.stroke();	
+		}
+	}
 /////////////////////////
 	
 	//http://dgerena.github.io/advancedTopicsInWeb/capstone/index.html github link.
