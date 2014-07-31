@@ -36,21 +36,42 @@ void setup() {
 }
 void loop() {
   if(digitalRead(inputPin) == HIGH){
-    val= 1;
+    val=1;
+    Serial.print("sensor reads ");
+    Serial.println(val);
+    int sensorValue = val;
+    datastreams[0].setFloat(sensorValue);
+    Serial.print("Read sensor value ");
+    Serial.println(datastreams[0].getFloat());
+    Serial.println("Uploading it to Xively");
+    int ret = xivelyclient.put(feed, xivelyKey);
+    Serial.print("xivelyclient.put returned ");
+    Serial.println(ret);
+    Serial.println();
   }else{
     val=0;
+    Serial.print("sensor reads ");
+    Serial.println(val);
+    int sensorValue = val;
+    datastreams[0].setFloat(sensorValue);
+    Serial.print("Read sensor value ");
+    Serial.println(datastreams[0].getFloat());
+    Serial.println("Uploading it to Xively");
+    int ret = xivelyclient.put(feed, xivelyKey);
+    Serial.print("xivelyclient.put returned ");
+    Serial.println(ret);
+    Serial.println();
   }
-  Serial.print("sensor reads ");
-  Serial.println(val);
-  
-  int sensorValue = digitalRead(val);
-  datastreams[0].setFloat(sensorValue);
-  Serial.print("Read sensor value ");
-//  Serial.println(datastreams[0].getInt());
-  Serial.println("Uploading it to Xively");
-  int ret = xivelyclient.put(feed, xivelyKey);
-  Serial.print("xivelyclient.put returned ");
-  Serial.println(ret);
-  Serial.println();
+//  Serial.print("sensor reads ");
+//  Serial.println(val);
+//  int sensorValue = digitalRead(val);
+//  datastreams[0].setFloat(sensorValue);
+//  Serial.print("Read sensor value ");
+//  Serial.println(datastreams[0].getFloat());
+//  Serial.println("Uploading it to Xively");
+//  int ret = xivelyclient.put(feed, xivelyKey);
+//  Serial.print("xivelyclient.put returned ");
+//  Serial.println(ret);
+//  Serial.println();
   delay(5000);
 }
