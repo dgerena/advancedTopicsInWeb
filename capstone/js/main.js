@@ -139,11 +139,8 @@ $(document).ready(function(){
 			ctx.moveTo(200,400);
 			ctx.lineTo(380,310);
 			ctx.stroke();	
-			//if statement for the direction in the header.
-			
+			//if statement for the direction in the header.	
 		}
-	} else {
-	  // canvas-unsupported code here
 	}
 });  
 
