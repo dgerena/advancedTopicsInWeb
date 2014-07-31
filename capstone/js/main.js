@@ -104,7 +104,7 @@ $(document).ready(function(){
 		ctx.stroke();
 
 		// arrow
-		console.log(document.getElementById("test").html());
+		$(function(){console.log(document.getElementById("test").html());
 		if (document.getElementById("test").text=='1.00') {
 			ctx.beginPath(); 
 			ctx.lineWidth="5";
@@ -142,6 +142,7 @@ $(document).ready(function(){
 			//if statement for the direction in the header.
 			
 		}
+	};
 	} else {
 	  // canvas-unsupported code here
 	}
