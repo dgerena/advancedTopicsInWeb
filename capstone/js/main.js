@@ -103,7 +103,7 @@ $(document).ready(function(){
 
 		// arrow
 		$(function(){
-			console.log(document.getElementById("test").html());
+			console.log(document.getElementById("test").val());
 			if (document.getElementById("test").text=='1.00'){
 				ctx.beginPath(); 
 				ctx.lineWidth="5";
