@@ -104,7 +104,7 @@ $(document).ready(function(){
 		ctx.stroke();
 
 		// arrow
-		
+		console.log(document.getElementById("test").text);
 		if (document.getElementById("test").text=='1.00') {
 			ctx.beginPath(); 
 			ctx.lineWidth="5";
