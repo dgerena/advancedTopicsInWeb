@@ -34,6 +34,7 @@ $(document).ready(function(){
 	// once the request is complete
 	var callbacks= $.Callbacks();
 	callbacks.add(draw());
+	callbacks.fire();
 });
 function draw(){
 		var canvas = document.getElementById('myCanvas');	
