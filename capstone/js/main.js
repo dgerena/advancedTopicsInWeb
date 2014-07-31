@@ -2,12 +2,14 @@ var ctx;
 $(document).ready(function(){
 	// xively shit starts here.
 	xively.setKey( "7mwhzeLKvubmGwT49aJH7Aztn6tbGETGnHraIcrooYP2qkVc" );
-	xively.feed.get( "504", function( data ) {  
+	/*xively.feed.get( "504", function( data ) {  
 	  console.log( data.title );// Logs the feed title  
 	});
+
 	xively.datastream.subscribe( "61916", "sine60", function( event, data ) {  
 	  console.log( data.current_value ); // Logs value changes in realtime  
-	});    
+	});   
+	*/ 
 	var feedID        = '544049360';          // Feed ID  
 	  datastreamID  = "sensor_reading1";       // Datastream ID  
 	  selector      = "#test";   // Your element on the page  
