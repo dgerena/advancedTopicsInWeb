@@ -26,7 +26,7 @@ $(document).ready(function(){
 		// Below, we subscribe for updates.
 		$(selector).html( datastream["current_value"] );  
 		draw();
-		redraw();
+		redraw(datastream["current_value"]);
 		// Getting realtime!   
 		// The function associated with the subscribe method will be executed   
 		// every time there is an update to the datastream  
@@ -34,7 +34,7 @@ $(document).ready(function(){
 			// This function runs any time updated data is received from xively.
 		  // Display the current value from the updated datastream  
 		  $(selector).html( datastream_updated["current_value"] );  
-		  redraw();
+		  redraw(datastream_updated["current_value"]);
 		});  
 	});
 	// WARNING: Code here will continue executing while we get the datastream data from Xively,   
@@ -108,9 +108,9 @@ function draw(){
 		};
 	};
 
-	function redraw(){
+	function redraw(theValue){
 		console.log($("#test").val());
-		if (document.getElementById("test").text=='1.00'){
+		if (theValue == '1.00'){
 			ctx.beginPath(); 
 			ctx.lineWidth="5";
 			ctx.strokeStyle="green";
