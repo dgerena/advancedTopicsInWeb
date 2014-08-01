@@ -140,7 +140,7 @@ function draw(){
 	}
 	function animdraw(){
 		//create the mice and cats with a set random time for a cat to come out.
-		var img=document.getElementById("scream");
+		var img=document.getElementById("mice");
 		ctx.drawImage(img,10,10);
 	}
 /////////////////////////
