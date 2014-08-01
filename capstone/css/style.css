@@ -9,6 +9,6 @@ canvas {
 	border:1px solid black;
 }
 img{
-	position: relative;
+	position: absolute;
 	left: -1000;
 }
