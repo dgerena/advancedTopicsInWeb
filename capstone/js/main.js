@@ -1,4 +1,5 @@
 var ctx;
+var canvas = document.getElementById('myCanvas');
 $(document).ready(function(){
 	// xively shit starts here.
 	xively.setKey( "7mwhzeLKvubmGwT49aJH7Aztn6tbGETGnHraIcrooYP2qkVc" );
@@ -43,7 +44,6 @@ $(document).ready(function(){
 	
 });
 function draw(){
-		var canvas = document.getElementById('myCanvas');	
 		if(canvas.getContext){
 			ctx = canvas.getContext('2d');
 			// drawing code here
@@ -138,10 +138,23 @@ function draw(){
 			ctx.stroke();	
 		}
 	}
+	animdraw();
 	function animdraw(){
 		//create the mice and cats with a set random time for a cat to come out.
-		var img=document.getElementById("mice");
-		ctx.drawImage(img,10,10);
+		ctx = canvas.getContext('2d');
+		var img = new Image();
+		img.src = "./img/mice.png";
+		img.height=50;
+		img.width=50;
+		img.rotate=90;
+		img.onload=function(){
+			ctx.drawImage(img,140,500,40,100);
+		};
+	}
+	function meace(x, y, fill) {
+		// create ainstance of the mice and
+		this.x = x || 0;
+		this.y = y || 0;
 	}
 /////////////////////////
 	
