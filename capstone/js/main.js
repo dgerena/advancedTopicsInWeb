@@ -138,6 +138,11 @@ function draw(){
 			ctx.stroke();	
 		}
 	}
+	function animdraw(){
+		//create the mice and cats with a set random time for a cat to come out.
+		var img=document.getElementById("scream");
+		ctx.drawImage(img,10,10);
+	}
 /////////////////////////
 	
 	//http://dgerena.github.io/advancedTopicsInWeb/capstone/index.html github link.
