@@ -18,6 +18,7 @@
 #include <SPI.h>
 #include <Ethernet.h>
 
+//Learning to do didnt go well.. but hey it happens. thanks mellis for a good file to work with.
 // Enter a MAC address and IP address for your controller below.
 // The IP address will be dependent on your local network:
 byte mac[] = { 
